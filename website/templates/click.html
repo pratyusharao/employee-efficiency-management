@@ -1,0 +1,90 @@
+
+    {% extends "base.html" %} {% block title %}Feedback{% endblock %} {% block content%}
+    {%block head%}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300&display=swap');
+        img{
+            margin: 100px;
+        }
+        .first{
+            display: flex;
+            background-color: rgb(148, 231, 229);
+            margin: 100px;
+            border-radius: 15px;
+        }
+        .info{
+            margin: 100px;
+            display: grid;
+            grid-template-rows: repeat(2,1fr);
+            font-family: 'Kanit', sans-serif;
+        }
+        .feed{
+            font-family: 'PT Sans Narrow', sans-serif;
+            margin: 100px;
+        }
+        .zz{
+            height: 80px;
+            width: 80px;
+        }
+        .one{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+        .p-2{
+            background-color: b;
+        }
+    </style>
+    {% endblock %}
+    <!-- <div class="first">
+        <div class="img">
+            <img src="x.jpeg" alt="">
+        </div>
+        <div class="info">
+              <h2>Name: Dhanvin</h2>
+              <h2>Email: bigD@gmail.com </h2>
+               <h2>EmpID: 001</h2>
+               <h2>EmployeeScore: 5/10</h2>
+        </div>
+    </div>
+        <div class="feed">
+            <h1>FEEDBACKS</h1>
+        </div>
+    
+        <div class="xyz">
+            <div class="one">
+                <img src="x.jpeg" alt="" class="zz">
+                <div class="two">
+                <h3>Suresh</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eveniet culpa tempora ullam, iste, veritatis quibusdam quis, et nesciunt illum quaerat quae deserunt possimus voluptas exercitationem ex earum nihil tempore!</h5>
+                <h6>20 September 2022</h6>
+                </div>
+            </div>
+            <div class="one">
+                <img src="x.jpeg" alt="" class="zz">
+                <div class="two">
+                <h3>Mahesh</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eveniet culpa tempora ullam, iste, veritatis quibusdam quis, et nesciunt illum quaerat quae deserunt possimus voluptas exercitationem ex earum nihil tempore!</h5>
+                <h6>14 Febraury 2022</h6>
+                </div>
+            </div>
+        </div> -->
+        <ul class="list-group list-group-flush" id="notes">
+            {% for note in user.notes %}
+            <li class="list-group-item">
+              <div>
+              {{ note.data }}
+              </div>
+              <br/>
+              <div>
+                  <span>{{user.first_name}}</span>
+                  <br/>
+                  <span>{{date}}</span>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+     
+    
+    {% endblock %}
+    

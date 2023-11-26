@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}Feedback{% endblock %} {% block content
+    %}
+    {% for emp in emp_list %}
+    <div class="p-2">
+      NAME:{{emp[1]}} <br>
+      EMAIL_ID:{{emp[2]}} <br>
+    </div>
+    {% endfor %}
+    <h1 align="center">Feedback</h1>
+    <form method="POST">
+        <textarea name="note" id="note" class="form-control"></textarea>
+        <br />
+        <div align="center">
+          <button type="submit" class="btn btn-primary">Add Note</button>
+        </div>
+      </form>
+    <ul class="list-group list-group-flush" id="notes">
+      {% for note in user.notes %}
+      <li class="list-group-item">
+        <div>
+        {{ note.data }}
+        </div>
+        <br/>
+        <div>
+            <span>{{user.first_name}}</span>
+            <br/>
+            <span>{{date}}</span>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endblock %}

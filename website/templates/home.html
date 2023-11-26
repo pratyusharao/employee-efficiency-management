@@ -1,0 +1,130 @@
+{% extends "base.html" %} {% block title %}Feedback{% endblock %} {% block content
+    %}
+
+<!-- <h3 align="center">Add new employee</h3>
+    {%for emp in user.employee%} 
+    <li class="list-group-item">
+        <div>
+        {{emp.first_name}}
+        </div>
+        <br/>
+        {{emp.email}}
+      </li>
+      {% endfor %} -->
+  {%block head%}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300&display=swap');
+  *{
+    margin: 0;
+    padding:0;
+  }
+  .flex-row{
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 100px;
+  }
+  .p-2{
+    margin: 20px;
+    display: flex;
+    background-color: rgb(135, 212, 222);
+    height: 100px;
+    width: 200px;
+    border-radius:4px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+  }
+.btnn{
+  background-color: rgb(135, 212, 222);
+  border: 0px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+</style>
+  {% endblock %}
+    <form method="POST">
+      <!-- <div class="main">
+        <div class="xyz">
+          Name: Dhanvin
+          Email:bigD@gmail.com
+          EmpID: 001
+        </div>
+        <div class="xyz">
+          Name: GB
+          Email:gb@gmail.com
+          EmpID: 002
+        </div>
+        <div class="xyz">
+          Name: Srinidhi
+          Email:sri@gmail.com
+          EmpID: 003
+        </div>
+        <div class="xyz">
+          Name: Gagan
+          Email:gaganD@gmail.com
+          EmpID: 004
+        </div>
+        <div class="xyz">
+          Name: Hitesh
+          Email:hitehsss@gmail.com
+          EmpID: 005
+        </div>
+        <div class="xyz">
+          Name: Gautham
+          Email:glens@gmail.com
+          EmpID: 006
+        </div>
+        <div class="xyz">
+          Name: Jeevan
+          Email:jeevan@gmail.com
+          EmpID: 007
+        </div>
+      </div> -->
+        <div class="div">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name"/>
+          </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+            />
+          </div>
+        <br />
+        <div align="center">
+          <button type="submit" class="btn btn-primary">Add Employee</button>
+        </div>
+    </div>
+      </form>
+    
+      <div class="d-flex flex-row">
+        {% for emp in emp_list %}
+          <!-- <div class="d-flex align-items-center">
+            <div class="xyz">
+              <span>NAME:{{emp[1]}}</span>
+              <span>EMAIL_ID:{{emp[2]}}</span>
+              </div>
+          </div> -->
+          <a href="feedback">
+            <button id="mybtn" class="btnn">
+              <div class="p-2">
+                NAME:{{emp[1]}} <br>
+                EMAIL_ID:{{emp[2]}} <br>
+              </div>
+            </button>
+          </a>
+        {% endfor %}
+      </div>
+    {% endblock %} 
+
+
+    
+
+
+
